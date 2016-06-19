@@ -24,6 +24,14 @@ class dhcp::params {
       $root_group  = 'root'
     }
 
+    'OpenBSD': {
+      $dhcp_dir    = '/etc'
+      $packagename = 'isc-dhcp-server'
+      $servicename = 'isc_dhcpd'
+      $root_group  = 'wheel'
+    }
+
+
     default: {
       fail("${::hostname}: This module does not support osfamily ${::osfamily}")
     }
